@@ -36,4 +36,7 @@ def showraven():
     button6.pack()
 
     room1.mainloop()
-showraven()
+
+
+if __name__ == '__main__':
+    showraven()
