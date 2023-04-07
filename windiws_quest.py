@@ -1,6 +1,7 @@
 from tkinter import *
-
+import won
 counter = 0
+
 
 
 def showraven():
@@ -21,20 +22,20 @@ def showraven():
         counter += 1
         button3.place_forget()
         ifcounter()
-
+    def ura():
+        won.win()
     def ifcounter():
         if counter == 0:
             counter == 0
         elif counter == 3:
+  
+           
+
             
-            next = Button(room1, text='Дальше', font='Arial 50')
+            next = Button(room1, text='ВЫХОД', font='Arial 50',command=ura)
             next.place(x=700, y=600)
-
-    def dalshedef():
-        end1 = Tk()
-        end1.mainloop()
-
-    room1 = Tk()
+           
+    room1 = Toplevel()
     room1.resizable(False, False)
     room1.geometry('1080x720+100+100')
 
@@ -71,4 +72,3 @@ def showraven():
 if __name__ == '__main__':
     showraven()
 
-    
