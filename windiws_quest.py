@@ -1,44 +1,69 @@
 from tkinter import *
-import won
-counter = 0
+from figure import figurf
+from guess import  guss
 
-
-
+right_answers=0
+wrong_answers=0
+counter =0
 def showraven():
-    def button1def():
-        global counter
-        counter += 1
-        button1.place_forget()
-        ifcounter()
-
-    def button2def():
-        global counter
-        counter += 1
-        button2.place_forget()
-        ifcounter()
-
-    def button3def():
-        global counter
-        counter += 1
-        button3.place_forget()
-        ifcounter()
-    def ura():
-        won.win()
-    def ifcounter():
-        if counter == 0:
-            counter == 0
-        elif counter == 3:
   
            
-
-            
-            next = Button(room1, text='ВЫХОД', font='Arial 50',command=ura)
-            next.place(x=700, y=600)
-           
     room1 = Toplevel()
+    room1.title('Равенства')
     room1.resizable(False, False)
     room1.geometry('1080x720+100+100')
+    
+    def result():
+        if counter >=3:
+            if right_answers==3 and wrong_answers==0:
+                def correctDef():
+                    figurf()
+                correct=Button(room1,text='Ты победил',command=correctDef,font='Arial 20')
+                correct.place(x=100,y=100)
+                # room1.destroy()
+            else:
+                room1.destroy()
+                guss()
 
+    
+    def b1():
+        global right_answers,counter
+        right_answers+=1
+        counter +=1
+        button1.place_forget()
+        result()
+    def b2():
+        global right_answers,counter
+        right_answers+=1
+        counter+=1
+        button2.place_forget()
+        result()
+    def b3():
+        global right_answers,counter
+        right_answers+=1
+        counter+=1
+        button3.place_forget()
+        result()
+    def b4():
+        global wrong_answers,counter
+        wrong_answers+=1
+        counter+=1
+        button4.place_forget()
+        result()
+    def b5():
+        global wrong_answers,counter
+        wrong_answers+=1
+        counter+=1
+        button5.place_forget()
+        result()
+    def b6():
+        global wrong_answers,counter
+        wrong_answers+=1
+        counter +=1
+        button6.place_forget()
+        result()
+
+   
     room1['bg'] = 'gray22'
 
     text1 = Label(
@@ -48,22 +73,22 @@ def showraven():
     text1.pack()
 
     # Buttons
-    button1 = Button(room1, text='2+2=4', fg='black', font='Arial 20', command=button1def)
+    button1 = Button(room1, text='2+2=4', fg='black', font='Arial 20', command=b1)
     button1.place(x=300, y=200)
 
-    button2 = Button(room1, text='6*6=36', fg='black', font='Arial 20', command=button2def)
+    button2 = Button(room1, text='6*6=36', fg='black', font='Arial 20', command=b2)
     button2.place(x=300, y=400)
 
-    button3 = Button(room1, text='4^2=16', fg='black', font='Arial 20', command=button3def)
+    button3 = Button(room1, text='4^2=16', fg='black', font='Arial 20', command=b3)
     button3.place(x=500, y=200)
     # -----------------------------------------------------------------
-    button4 = Button(room1, text='99+8=108', fg='black', font='Arial 20')
+    button4 = Button(room1, text='99+8=108', fg='black', font='Arial 20', command=b4)
     button4.place(x=500, y=400)
 
-    button5 = Button(room1, text='3+3=7', fg='black', font='Arial 20')
+    button5 = Button(room1, text='3+3=7', fg='black', font='Arial 20', command=b5)
     button5.place(x=700, y=200)
 
-    button6 = Button(room1, text='3+3>3*2', fg='black', font='Arial 20')
+    button6 = Button(room1, text='3+3>3*2', fg='black', font='Arial 20', command=b6)
     button6.place(x=700, y=400)
 
     room1.mainloop()
