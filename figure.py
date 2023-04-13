@@ -3,8 +3,12 @@
 from tkinter import *
 from tkinter import messagebox
 from won import win
+from PIL import Image
+from PIL import ImageTk
 line_button1=-1
 line_button2=-1
+
+pic = ""
 
 def figurf():
     global line_button1,line_button2
@@ -75,9 +79,15 @@ def figurf():
         
     print(lines)
     room3=Toplevel()
+    canvas = Canvas(room3, width=1000, height=1000)
+    
+    pic = PhotoImage(file="__pycache__/project/fg2.png")
+    image = canvas.create_image(1,1 ,anchor=NW, image=pic)
+    
+   
     room3.title('Не отрывая руки')
 
-    canvas=Canvas(room3,width=1000,height=1000)
+
     button1=Button(canvas,text='1',font='Arial 50')
     button1.bind('<Button-1>',click_button)
     button1.place(x=300,y=300)
@@ -105,5 +115,3 @@ def figurf():
     
 if __name__ == '__main__':
     figurf()
-
- 

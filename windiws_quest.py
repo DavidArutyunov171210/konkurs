@@ -18,8 +18,8 @@ def showraven():
             if right_answers==3 and wrong_answers==0:
                 def correctDef():
                     figurf()
-                correct=Button(room1,text='Ты победил',command=correctDef,font='Arial 20')
-                correct.place(x=100,y=100)
+                correct=Button(room1,text='Ты победил',command=correctDef,font='Arial 50')
+                correct.place(x=500,y=600)
                 # room1.destroy()
             else:
                 room1.destroy()
